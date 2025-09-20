@@ -6,7 +6,7 @@ app.secret_key = "centricia awesome"
 
 #mail configuration
 app.config['MAIL_SERVER'] = 'smtp.gmail.com'
-app.config['MAIL-PORT'] = '587'
+app.config['MAIL-PORT'] = 587
 app.config['MAIL_USE_TLS'] = True
 app.config['MAIL_USERNAME'] = 'jb831608@gmail.com'
 app.config['MAIL_PASSWORD'] = 'xkxb jwlg lpjb lpkx'
@@ -46,3 +46,4 @@ def contact_us():
 
 if __name__ =="__main__":
     app.run(host='0.0.0.0', debug=True)
+
