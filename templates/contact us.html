@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Contact us </title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet"  href="{{ url_for('static', filename='style.css') }}">
+    <link rel="stylesheet"  href="{{ url_for('static', filename='css/bootstrap.min.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='fontawesome-free-5.15.4-web/css/all.css') }}">
+</head>
+<body>
+
+<main>
+   
+    <div class="container">
+    <div class="row mt-5">
+        <h2 class="text-center">Get in Touch with us</h2>
+        <p class="text-center">We would love to respond to your quaries and help you succeed. <br> feel free to get in touch with us.</p>
+        <div class="col-md-5 mt-5">
+            <form action="{{ url_for('contact_us') }}" method="POST">
+                <div class="md-3">
+                    <label for="Name" class="form-label">Name</label>
+                    <input type="text" name="name" class="form-control" required>
+                  </div>
+                <div class="md-3">
+                  <label for="email" class="form-label">Email address</label>
+                  <input type="email" name="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" required>
+                </div>
+                <div class="mb-3">
+                  <label for="message" class="form-label">Message</label>
+                  <textarea name="message" class="form-control" id="" required></textarea>
+                </div>
+                <button type="submit" class="btn btn-outline-danger">Send Message</button>
+              </form>
+              {% with messages = get_flashed_messages(with_categories=true) %}
+              {% if messages %}
+                 {% for categor, message in messages %}
+                 <p style="color: green;">{{ message }}</p>
+                                            {% endfor %}
+                                            {% endif %}
+                                            {% endwith %}
+        </div>
+
+    
+
+    <div style="width:60px; height:60px; position: fixed; right:10px; bottom:10px;">
+       <a href="https://wa.me/260979476500" ><img src="{{ url_for('static', filename='images/whatsapp.png') }}" style="width:60px; height:60px;"/> </a>
+    </div>
+    <br>
+    <br>
+
+    <div class="appointment-button-container" style="width:60px; height:60px; position: fixed; right:21px; bottom:80px;">
+        <button id="book-appointment-button"> <img src="{{ url_for('static', filename='images/telephone1.png') }}" style="width:60px; height:60px;"/> </button> 
+    </div>
+
+    <script>
+        const form = document 
+        getElementByld('appointment-form');
+
+        form.addEventListener('submit', (e)=> {
+        
+        });
+
+    </script>
+
+    <Script>
+        const bookAppointmentButton = document.getElementById('book-appointment-button');
+
+        bookAppointmentButton.addEventListener('click', () => {
+            var yourPhoneNumber = '+260 950 200 008';
+
+            window.location.href = 'tel:' + yourPhoneNumber;
+        });
+
+    </Script>
+
+</main>
+<br>
+<br>
+<footer class="bg-dark text-white pt-5 pb-4">
+        <div class="container text-center text-md-left">
+            <div class="row text-center text-md-left">
+
+                <div class="col-md3 col-lg-3 col-xl-3 max-auto mt-3">
+                    <h5>Centricia Lodge</h5>
+
+                </div>
+
+
+                <div class="col-md2 col-lg-2 col-xl-2 max-auto mt-3">
+                    <h5 class="text-uppercase mb-4 font-weight-bold text-warning">Our Services</h5>
+
+                        <p>
+                            <a href="#" class="text-white" style="text-decoration: none;">Luxury Suites</a>
+                        </p>
+    
+                        <p>
+                            <a href="#" class="text-white" style="text-decoration: none;">Standard Rooms</a>
+                        </p>
+                        
+                        <p>
+                            <a href="#" class="text-white" style="text-decoration: none;">Family-Friendly Rooms</a>
+                        </p>
+                </div>
+
+                <div class="col-md-4 col-lg-3 col-xl-3 max-auto mt-3">
+                 <h5 class="text-uppercase mb-4 font-weight-bold text-warning">Contacts</h5>
+
+                    <p>
+                      <i class="fas fa-map-marker-alt"></i> Off Mutale Road, Kasama, Zambia. 
+                    </p>
+
+                    <p>
+                        <i class="fas fa-phone"></i> +260 779975968 <br> +260 963708306
+                    </p>
+
+                    <p> 
+                        <i class="fas fa-envelope"></i> centricialodge@gmail.com
+                    </p>
+                </div>
+
+                <hr class="mb-4">
+                <div class="col-md-7 col-lg-8">
+                    <p> copyright &copy;
+                    <script>
+                        document.write(new Date().getFullYear());
+                    </script> All rights reserved by Centricia Lodge. | Terms of use | Privacy Policy. </p>
+
+                </div>
+
+                <div class="col-md-5 col-lg-4">
+                    <div class="text-center text-md-right">
+
+                        <ul class="list-unstyled list-inline">
+                            <li class="list-inline-item">
+                                <a href="https://www.facebook.com/centricialodge/" class="btn-floating btn-sm text-white" style="font-size: 23px;"><i class="fab fa-facebook"></i></a>
+                            </li>
+                            <li class="list-inline-item">
+                                <a href="https://www.instagram.com/centricialodge/" class="btn-floating btn-sm text-white" style="font-size: 23px;"><i class="fab fa-instagram"></i></a>
+                            </li>
+                        </ul>
+
+                    </div>
+                </div>
+
+        </div>
+
+</footer>
+ 
+<script src="{{ url_for('static', filename='js/bootstrap.bundle.min.js') }}" ></script>
+</body>
+</html>
