@@ -6,7 +6,7 @@ app.secret_key = os.environ.get('SECRET_KEY')
 
 #mail configuration
 app.config['MAIL_SERVER'] = 'smtp.gmail.com'
-app.config['MAIL-PORT'] = 587
+app.config['MAIL_PORT'] = 587
 app.config['MAIL_USE_TLS'] = True
 app.config['MAIL_USERNAME'] = os.environ.get('MAIL_USERNAME')
 app.config['MAIL_PASSWORD'] = os.environ.get('MAIL_PASSWORD')
@@ -26,7 +26,8 @@ def about_us():
 def services():
     return render_template("services.html")
 
-@app.route("/contact us", methods=["GET", "POST"])
+@app.route("/contact us", 
+methods=["GET", "POST"])
 def contact_us():
         if request.method == "POST":
              name = request.form['name']
@@ -41,11 +42,16 @@ def contact_us():
              """
              mail.send(msg)
              flash("your message has been sent successfully", "success")
-             return redirect(url_for('contact_us'))
-        return render_template("contact us.html")
+              except Exception as e:
+            flash(f"Error sending message: {e}", "danger")
+             return 
+            redirect(url_for('contact_us'))
+        return 
+render_template("contact us.html")
 
 if __name__ =="__main__":
     app.run(host='0.0.0.0', debug=True)
+
 
 
 
