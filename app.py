@@ -2,15 +2,15 @@ from flask import Flask, render_template, request, redirect, url_for, flash
 from flask_mail import Mail, Message
 
 app = Flask(__name__)
-app.secret_key = "centricia awesome"
+app.secret_key = os.environ.get('SECRET_KEY')
 
 #mail configuration
 app.config['MAIL_SERVER'] = 'smtp.gmail.com'
 app.config['MAIL-PORT'] = 587
 app.config['MAIL_USE_TLS'] = True
-app.config['MAIL_USERNAME'] = 'jb831608@gmail.com'
-app.config['MAIL_PASSWORD'] = 'xkxb jwlg lpjb lpkx'
-app.config['MAIL_DEFAULT_SENDER'] = 'jb831608@gmail.com'
+app.config['MAIL_USERNAME'] = os.environ.get('MAIL_USERNAME')
+app.config['MAIL_PASSWORD'] = os.environ.get('MAIL_PASSWORD')
+app.config['MAIL_DEFAULT_SENDER'] = os.environ.get('MAIL_USERNAME')
 
 mail = Mail(app)
 
@@ -46,4 +46,5 @@ def contact_us():
 
 if __name__ =="__main__":
     app.run(host='0.0.0.0', debug=True)
+
 
