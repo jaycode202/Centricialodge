@@ -1,0 +1,124 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.nav-link{
+    color: white!important;
+    font-weight: bold!important;
+
+    
+}
+
+.nav-link:hover{
+    color: white!important;
+    background-color: rgb(151, 127, 165)!important;
+    
+   
+}
+
+title{
+    font-weight: bolder!important;
+}
+
+.carousel-caption{
+    position: absolute!important;
+    top: 54%!important;
+    transform: translateY(-50%)!important;
+}
+
+.carousel-caption h1{
+    color: blueviolet!important;
+}
+
+html, body{
+    max-width: 100%!important;
+    overflow-x: hidden!important;
+}
+
+.section-title{
+    align-items: center!important;
+    justify-items: center;
+}
+
+
+.article {
+    text-align: center!important;
+    text-decoration: black!important;
+   
+}
+
+.title-section{
+    text-align: center!important;
+}
+.row{
+    align-items: center!important;
+    justify-content: center!important;
+}
+
+/* FOR TABLETS */
+@media (max-width: 768px) {
+    .article {
+    justify-items: center!important;
+    align-items: center!important;
+
+    
+   
+}
+
+.hero{
+    height: 50vh!important;
+}
+
+.carousel-caption{
+    position: absolute!important;
+    top: 54%!important;
+    transform: translateY(-50%)!important;
+    color: blueviolet!important;
+}
+    
+
+.article {
+    text-align: center!important;
+    text-decoration: black!important;
+   
+}
+
+  .appointment-button-container{
+        width:60px!important; 
+        height:60px!important; 
+        position: fixed!important; 
+        right:20px !important; 
+        bottom:80px!important;
+    }
+}
+
+/*  */
+@media (max-width: 480px){
+
+    .carousel-caption{
+        position: absolute!important;
+        top: 54%!important;
+        transform: translateY(-50%)!important;
+        color: rgba(5, 5, 211, 0.904)!important;
+    }
+
+    .article {
+        align-content: center!important;
+        text-decoration: black!important;
+
+       
+    }
+
+    .appointment-button-container{
+        width:60px!important; 
+        height:60px!important; 
+        position: fixed!important; 
+        right:11px !important; 
+        bottom:80px!important;
+    }
+
+}
+
+
