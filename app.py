@@ -34,7 +34,7 @@ def contact_us():
              email = request.form['email']
              message = request.form['message']
 
-             msg = Message(f"New Contact Form Message {name}", recipients=["jb831608@gmail.com"])
+             msg = Message(f"New Contact Form Message {name}", recipients= os.environ.get('MAIL_USERNAME')
              msg.body = f"""
              Name: {name}
              Email: {email}
@@ -51,6 +51,7 @@ render_template("contact us.html")
 
 if __name__ =="__main__":
     app.run(host='0.0.0.0', debug=True)
+
 
 
 
